@@ -34,6 +34,7 @@ export default class App extends Component {
 
   render() {
     const { data, showpopup, userdata } = this.state
+    const baseUrl = import.meta.env.BASE_URL
 
     return (
       <div className='app'>
@@ -43,7 +44,12 @@ export default class App extends Component {
         </div>
 
         <div className='section'>
-          <img src="/1.jpg" alt="banner" className="appImage" />
+          
+          <img
+            src={baseUrl + "1.jpg"}
+            alt="banner"
+            className="appImage"
+          />
 
           <table>
             <thead>
@@ -72,11 +78,11 @@ export default class App extends Component {
                       👁
                     </button>
                   </td>
-
                 </tr>
               ))}
             </tbody>
           </table>
+
         </div>
 
         <div className='footer'>
@@ -92,7 +98,12 @@ export default class App extends Component {
               </div>
 
               <div className='popupSection'>
-                <img src="/1.jpg" alt="profile" className="popupImage" />
+
+                <img
+                  src={baseUrl + "1.jpg"}
+                  alt="profile"
+                  className="popupImage"
+                />
 
                 <p><span>ID</span><span>{userdata.id}</span></p>
                 <p><span>Name</span><span>{userdata.name}</span></p>
@@ -112,9 +123,11 @@ export default class App extends Component {
                 <p>
                   <span>Company</span>
                   <span>
-                    {userdata.company.name}<br />{userdata.company.bs}
+                    {userdata.company.name}<br />
+                    {userdata.company.bs}
                   </span>
                 </p>
+
               </div>
 
               <div className='popupFooter'></div>
